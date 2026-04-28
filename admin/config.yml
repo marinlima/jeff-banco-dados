@@ -1,10 +1,10 @@
 backend:
   name: git-gateway
   branch: main
- 
+
 media_folder: assets/img
 public_folder: assets/img
- 
+
 collections:
   - name: "legendas"
     label: "Legendas das Fotos"
@@ -12,8 +12,6 @@ collections:
       - name: "Editorial-makeup"
         label: "Editorial Makeup"
         file: "content/Editorial-makeup.json"
-        media_folder: "/assets/img/Editorial-makeup"
-        public_folder: "/assets/img/Editorial-makeup"
         fields:
           - name: fotos
             label: Fotos
@@ -21,7 +19,8 @@ collections:
             fields:
               - { label: "Foto", name: "arquivo", widget: "image", media_folder: "/assets/img/Editorial-makeup", public_folder: "/assets/img/Editorial-makeup" }
               - { label: "Legenda", name: "legenda", widget: "string", required: false }
- 
+              - { label: "Layout", name: "tipo", widget: "select", options: ["multi", "single"], default: "multi" }
+
       - name: "Editorial-fashion"
         label: "Editorial Fashion"
         file: "content/Editorial-fashion.json"
@@ -32,7 +31,8 @@ collections:
             fields:
               - { label: "Foto", name: "arquivo", widget: "image", media_folder: "/assets/img/Editorial-fashion", public_folder: "/assets/img/Editorial-fashion" }
               - { label: "Legenda", name: "legenda", widget: "string", required: false }
- 
+              - { label: "Layout", name: "tipo", widget: "select", options: ["multi", "single"], default: "multi" }
+
       - name: "Beauty-portraits"
         label: "Beauty Portraits"
         file: "content/Beauty-portraits.json"
@@ -43,7 +43,8 @@ collections:
             fields:
               - { label: "Foto", name: "arquivo", widget: "image", media_folder: "/assets/img/Beauty-portraits", public_folder: "/assets/img/Beauty-portraits" }
               - { label: "Legenda", name: "legenda", widget: "string", required: false }
- 
+              - { label: "Layout", name: "tipo", widget: "select", options: ["multi", "single"], default: "multi" }
+
       - name: "Advertising"
         label: "Advertising"
         file: "content/Advertising.json"
@@ -54,3 +55,4 @@ collections:
             fields:
               - { label: "Foto", name: "arquivo", widget: "image", media_folder: "/assets/img/Advertising", public_folder: "/assets/img/Advertising" }
               - { label: "Legenda", name: "legenda", widget: "string", required: false }
+              - { label: "Layout", name: "tipo", widget: "select", options: ["multi", "single"], default: "multi" }

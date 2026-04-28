@@ -19,7 +19,55 @@ async function loadAllData() {
       allData[cat.id] = data.fotos || [];
     } catch (err) {
       allData[cat.id] = [];
-      console.warn(`Erro ao carregar ${cat.json}:`, err);
+    }
+  }
+}
+
+function getImgSrc(arquivo, folder) {
+  if (!arquivo) return '';
+  if (arquivo.startsWith('http')) return arquivo;
+  if (arquivo.startsWith('/')) return arquivo.replace(/^\//, '');
+  if (arquivo.includes('/')) return arquivo;
+  return `assets/img/${folder}/${arquivo}`;
+}
+
+function makeImg(foto, folder) {
+  const img = document.createElement('img');
+  img.src = getImgSrc(foto.arquivo, folder);
+  img.alt = foto.legenda || foto.arquivo;
+  if (foto.legenda) img.dataset.caption = foto.legenda;
+  img.loading = 'lazy';
+  img.decoding = 'async';
+  return img;
+}
+
+function renderFotos(fotos, folder, container) {
+  container.innerHTML = '';
+  let i = 0;
+  while (i < fotos.length) {
+    const foto = fotos[i];
+    if (foto.tipo === 'single') {
+      const div = document.createElement('div');
+      div.className = 'ph-grid-single';
+      div.appendChild(makeImg(foto, folder));
+      container.appendChild(div);
+      i++;
+    } else {
+      const next = fotos[i + 1];
+      if (next && next.tipo !== 'single') {
+        const div = document.createElement('div');
+        div.className = 'ph-grid-multi';
+        div.appendChild(makeImg(foto, folder));
+        div.appendChild(makeImg(next, folder));
+        container.appendChild(div);
+        i += 2;
+      } else {
+        const div = document.createElement('div');
+        div.className = 'ph-grid-single';
+        div.appendChild(makeImg(foto, folder));
+        container.appendChild(div);
+        i++;
+      }
     }
   }
 }
@@ -27,75 +75,30 @@ async function loadAllData() {
 function renderPanel(cat) {
   const panel = document.getElementById('panel-' + cat.id);
   if (!panel) return;
+
   if (cat.id === 'overview') {
     renderOverview();
     return;
   }
 
   const fotos = allData[cat.id] || [];
-  panel.innerHTML = '';
-
-  for (let i = 0; i < fotos.length; i += 2) {
-    const foto1 = fotos[i];
-    const foto2 = fotos[i + 1];
-
-    if (foto2) {
-      const div = document.createElement('div');
-      div.className = 'ph-grid-multi';
-      div.appendChild(makeImg(foto1, cat.folder));
-      div.appendChild(makeImg(foto2, cat.folder));
-      panel.appendChild(div);
-    } else {
-      const div = document.createElement('div');
-      div.className = 'ph-grid-single';
-      div.appendChild(makeImg(foto1, cat.folder));
-      panel.appendChild(div);
-    }
-  }
+  renderFotos(fotos, cat.folder, panel);
 }
 
 function renderOverview() {
   const panel = document.getElementById('panel-overview');
   if (!panel) return;
   panel.innerHTML = '';
-
-  const div = document.createElement('div');
-  div.className = 'overview-grid';
+  const wrapper = document.createElement('div');
+  wrapper.className = 'overview-grid';
 
   for (const cat of CATS) {
     if (!cat.folder) continue;
     const fotos = allData[cat.id] || [];
-
-    for (let i = 0; i < fotos.length; i += 2) {
-      const foto1 = fotos[i];
-      const foto2 = fotos[i + 1];
-
-      if (foto2) {
-        const row = document.createElement('div');
-        row.className = 'ph-grid-multi';
-        row.appendChild(makeImg(foto1, cat.folder));
-        row.appendChild(makeImg(foto2, cat.folder));
-        div.appendChild(row);
-      } else {
-        const row = document.createElement('div');
-        row.className = 'ph-grid-single';
-        row.appendChild(makeImg(foto1, cat.folder));
-        div.appendChild(row);
-      }
-    }
+    renderFotos(fotos, cat.folder, wrapper);
   }
 
-  panel.appendChild(div);
-}
-
-function makeImg(foto, folder) {
-  const img = document.createElement('img');
-  img.src = `assets/img/${folder}/${foto.arquivo}`;
-  img.alt = foto.legenda || foto.arquivo;
-  if (foto.legenda) img.dataset.caption = foto.legenda;
-  img.loading = 'lazy';
-  img.decoding = 'async';
-  return img;
+  panel.appendChild(wrapper);
 }
 
 function showCat(index) {
@@ -104,8 +107,7 @@ function showCat(index) {
 
   document.getElementById('catTitle').textContent = cat.label;
 
-  document.querySelectorAll('.cat-panel')
-    .forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.cat-panel').forEach(p => p.classList.remove('active'));
 
   const panel = document.getElementById('panel-' + cat.id);
   if (panel) panel.classList.add('active');
