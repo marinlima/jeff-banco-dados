@@ -572,7 +572,7 @@ nav {
 
 @media (min-width: 1024px) {
 
-  .cat-panel {
+  .cat-panel:not(#panel-overview) {
     column-count: 4;
     column-gap: 12px;
     padding: 0 80px;
@@ -580,12 +580,12 @@ nav {
     margin: 0 auto;
   }
 
-  .ph-grid-multi,
-  .ph-grid-single {
+  .cat-panel:not(#panel-overview) .ph-grid-multi,
+  .cat-panel:not(#panel-overview) .ph-grid-single {
     display: contents;
   }
 
-  .cat-panel img {
+  .cat-panel:not(#panel-overview) img {
     width: 100%;
     margin-bottom: 12px;
     break-inside: avoid;
