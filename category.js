@@ -196,7 +196,7 @@ function renderLb() {
   lbImg.alt = item.alt;
   const caption = document.getElementById('lbCaption');
   caption.textContent = item.caption;
-  caption.style.display = item.caption ? '' : 'none';
+  caption.style.display = '';
   lbCounter.textContent = `${lbCurrent + 1} / ${lbImages.length}`;
   resetZoom();
 }
