@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeff Duartê</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="category.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-left" id="nav-left">
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="dropdown" id="dropdown">
+      <a href="index.html#home">Portfolio</a>
+      <a href="contact.html#biography">Biography</a>
+      <a href="contact.html#contact">Contact</a>
+    </div>
+  </div>
+  <a href="index.html#home" class="nav-logo">Jeff Duartê</a>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <h1 class="hero-name">Jeff Duartê</h1>
+    <p class="hero-sub">Beauty Artist · Makeup · Hair · Digital Creators</p>
+  </div>
+</section>
+
+<section class="portfolio">
+  <div class="portfolio-header">
+    <span class="portfolio-title">Portfolio</span>
+  </div>
+</section>
+
+<main class="cat-viewer">
+  <div class="cat-nav">
+    <button class="cat-arrow" id="arrowPrev">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <span class="cat-title" id="catTitle">Editorial Makeup</span>
+    <button class="cat-arrow" id="arrowNext">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <button class="cat-menu-btn" id="catMenuBtn">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="cat-menu" id="catMenu">
+      <a href="#" data-cat="editorial-makeup">Editorial Makeup</a>
+      <a href="#" data-cat="editorial-fashion">Editorial Fashion</a>
+      <a href="#" data-cat="beauty-portraits">Beauty Portraits</a>
+      <a href="#" data-cat="advertising">Advertising</a>
+      <a href="#" data-cat="overview">Overview</a>
+    </div>
+  </div>
+
+  <div class="cat-panel active" id="panel-editorial-makeup"></div>
+  <div class="cat-panel" id="panel-editorial-fashion"></div>
+  <div class="cat-panel" id="panel-beauty-portraits"></div>
+  <div class="cat-panel" id="panel-advertising"></div>
+  <div class="cat-panel" id="panel-overview"></div>
+
+  <div class="about-btn-wrap">
+    <a href="contact.html" class="about-btn">About the artist</a>
+  </div>
+</main>
+
+<footer class="footer-bar"></footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose">
+    <svg viewBox="0 0 24 24">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+  <button class="lb-prev" id="lbPrev">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <div class="lb-content">
+    <div class="lb-vertical-name">Jeff Duartê</div>
+    <div class="lb-image-wrap">
+      <img id="lbImg" class="lb-img" src="">
+    </div>
+    <div class="lb-caption" id="lbCaption"></div>
+  </div>
+  <button class="lb-next" id="lbNext">
+    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+  <div class="lb-counter" id="lbCounter"></div>
+</div>
+
+<script src="category.js"></script>
+</body>
+</html>

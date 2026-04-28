@@ -1,0 +1,54 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: assets/img
+public_folder: assets/img
+
+collections:
+  - name: "legendas"
+    label: "Legendas das Fotos"
+    files:
+      - name: "Editorial-makeup"
+        label: "Editorial Makeup"
+        file: "content/Editorial-makeup.json"
+        fields:
+          - name: fotos
+            label: Fotos
+            widget: list
+            fields:
+              - { label: "Arquivo", name: "arquivo", widget: "string", hint: "Ex: Editorial-makeup-1.webp" }
+              - { label: "Legenda", name: "legenda", widget: "string", required: false }
+
+      - name: "Editorial-fashion"
+        label: "Editorial Fashion"
+        file: "content/Editorial-fashion.json"
+        fields:
+          - name: fotos
+            label: Fotos
+            widget: list
+            fields:
+              - { label: "Arquivo", name: "arquivo", widget: "string", hint: "Ex: Editorial-fashion-1.webp" }
+              - { label: "Legenda", name: "legenda", widget: "string", required: false }
+
+      - name: "Beauty-portraits"
+        label: "Beauty Portraits"
+        file: "content/Beauty-portraits.json"
+        fields:
+          - name: fotos
+            label: Fotos
+            widget: list
+            fields:
+              - { label: "Arquivo", name: "arquivo", widget: "string", hint: "Ex: Beauty-portraits-1.webp" }
+              - { label: "Legenda", name: "legenda", widget: "string", required: false }
+
+      - name: "Advertising"
+        label: "Advertising"
+        file: "content/Advertising.json"
+        fields:
+          - name: fotos
+            label: Fotos
+            widget: list
+            fields:
+              - { label: "Arquivo", name: "arquivo", widget: "string", hint: "Ex: Advertising-1.webp" }
+              - { label: "Legenda", name: "legenda", widget: "string", required: false }
