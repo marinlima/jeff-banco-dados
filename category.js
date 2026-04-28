@@ -41,8 +41,8 @@ function makeImg(foto, folder) {
   return img;
 }
 
-function renderFotos(fotos, folder, container) {
-  container.innerHTML = '';
+function renderFotos(fotos, folder, container, append = false) {
+  if (!append) container.innerHTML = '';
   let i = 0;
   while (i < fotos.length) {
     const foto = fotos[i];
@@ -95,7 +95,7 @@ function renderOverview() {
   for (const cat of CATS) {
     if (!cat.folder) continue;
     const fotos = allData[cat.id] || [];
-    renderFotos(fotos, cat.folder, wrapper);
+    renderFotos(fotos, cat.folder, wrapper, true);
   }
 
   panel.appendChild(wrapper);
