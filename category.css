@@ -656,3 +656,26 @@ body.fade-out {
     display: none;
   }
 }
+
+#panel-overview {
+  max-width: 1600px;
+  padding: 0 80px;
+  margin: 0 auto;
+}
+
+.overview-grid {
+  column-count: 4;
+  column-gap: 12px;
+}
+
+.overview-grid .ph-grid-multi,
+.overview-grid .ph-grid-single {
+  display: contents;
+}
+
+.overview-grid img {
+  width: 100%;
+  margin-bottom: 12px;
+  break-inside: avoid;
+  display: block;
+}
