@@ -1,10 +1,10 @@
 backend:
   name: git-gateway
   branch: main
-
+ 
 media_folder: assets/img
 public_folder: assets/img
-
+ 
 collections:
   - name: "legendas"
     label: "Legendas das Fotos"
@@ -12,14 +12,16 @@ collections:
       - name: "Editorial-makeup"
         label: "Editorial Makeup"
         file: "content/Editorial-makeup.json"
+        media_folder: "/assets/img/Editorial-makeup"
+        public_folder: "/assets/img/Editorial-makeup"
         fields:
           - name: fotos
             label: Fotos
             widget: list
             fields:
-              - { label: "Arquivo", name: "arquivo", widget: "string", hint: "Ex: Editorial-makeup-1.webp" }
+              - { label: "Foto", name: "arquivo", widget: "image", media_folder: "/assets/img/Editorial-makeup", public_folder: "/assets/img/Editorial-makeup" }
               - { label: "Legenda", name: "legenda", widget: "string", required: false }
-
+ 
       - name: "Editorial-fashion"
         label: "Editorial Fashion"
         file: "content/Editorial-fashion.json"
@@ -28,9 +30,9 @@ collections:
             label: Fotos
             widget: list
             fields:
-              - { label: "Arquivo", name: "arquivo", widget: "string", hint: "Ex: Editorial-fashion-1.webp" }
+              - { label: "Foto", name: "arquivo", widget: "image", media_folder: "/assets/img/Editorial-fashion", public_folder: "/assets/img/Editorial-fashion" }
               - { label: "Legenda", name: "legenda", widget: "string", required: false }
-
+ 
       - name: "Beauty-portraits"
         label: "Beauty Portraits"
         file: "content/Beauty-portraits.json"
@@ -39,9 +41,9 @@ collections:
             label: Fotos
             widget: list
             fields:
-              - { label: "Arquivo", name: "arquivo", widget: "string", hint: "Ex: Beauty-portraits-1.webp" }
+              - { label: "Foto", name: "arquivo", widget: "image", media_folder: "/assets/img/Beauty-portraits", public_folder: "/assets/img/Beauty-portraits" }
               - { label: "Legenda", name: "legenda", widget: "string", required: false }
-
+ 
       - name: "Advertising"
         label: "Advertising"
         file: "content/Advertising.json"
@@ -50,5 +52,5 @@ collections:
             label: Fotos
             widget: list
             fields:
-              - { label: "Arquivo", name: "arquivo", widget: "string", hint: "Ex: Advertising-1.webp" }
+              - { label: "Foto", name: "arquivo", widget: "image", media_folder: "/assets/img/Advertising", public_folder: "/assets/img/Advertising" }
               - { label: "Legenda", name: "legenda", widget: "string", required: false }
