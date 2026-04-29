@@ -5,8 +5,8 @@ backend:
 media_library:
   name: cloudinary
   config:
-    cloud_name: SEU_CLOUD_NAME
-    api_key: SUA_API_KEY
+    cloud_name: dhfjtop8x
+    api_key: 177524276612323
 
 media_folder: assets/img
 public_folder: assets/img
