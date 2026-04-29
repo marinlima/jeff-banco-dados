@@ -1,11 +1,6 @@
 {
   "fotos": [
     {
-      "tipo": "single",
-      "arquivo": "/assets/img/Editorial-makeup/photo-2023-11-13-17-42-35.jpg",
-      "legenda": "modelo teste"
-    },
-    {
       "arquivo": "Editorial-makeup-1.webp",
       "legenda": "",
       "tipo": "multi"
@@ -79,6 +74,11 @@
       "arquivo": "Editorial-makeup-16.webp",
       "legenda": "",
       "tipo": "single"
+    },
+    {
+      "tipo": "single",
+      "arquivo": "/assets/img/Editorial-makeup/photo-2023-11-13-17-42-35.jpg",
+      "legenda": "modelo teste"
     }
   ]
 }
