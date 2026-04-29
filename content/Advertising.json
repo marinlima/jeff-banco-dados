@@ -1,12 +1,12 @@
 {
   "fotos": [
-    { "arquivo": "Advertising-1.webp", "legenda": "", "tipo": "multi" },
-    { "arquivo": "Advertising-3.webp", "legenda": "", "tipo": "multi" },
-    { "arquivo": "Advertising-4.webp", "legenda": "", "tipo": "single" },
-    { "arquivo": "Advertising-5.webp", "legenda": "", "tipo": "multi" },
-    { "arquivo": "Advertising-6.webp", "legenda": "", "tipo": "multi" },
-    { "arquivo": "Advertising-7.webp", "legenda": "", "tipo": "single" },
-    { "arquivo": "Advertising-9.webp", "legenda": "", "tipo": "multi" },
-    { "arquivo": "Advertising-10.webp", "legenda": "", "tipo": "multi" }
+    { "arquivo": "/assets/img/Advertising/Advertising-1.webp", "legenda": "", "tipo": "multi" },
+    { "arquivo": "/assets/img/Advertising/Advertising-3.webp", "legenda": "", "tipo": "multi" },
+    { "arquivo": "/assets/img/Advertising/Advertising-4.webp", "legenda": "", "tipo": "single" },
+    { "arquivo": "/assets/img/Advertising/Advertising-5.webp", "legenda": "", "tipo": "multi" },
+    { "arquivo": "/assets/img/Advertising/Advertising-6.webp", "legenda": "", "tipo": "multi" },
+    { "arquivo": "/assets/img/Advertising/Advertising-7.webp", "legenda": "", "tipo": "single" },
+    { "arquivo": "/assets/img/Advertising/Advertising-9.webp", "legenda": "", "tipo": "multi" },
+    { "arquivo": "/assets/img/Advertising/Advertising-10.webp", "legenda": "", "tipo": "multi" }
   ]
 }
