@@ -2,6 +2,12 @@ backend:
   name: git-gateway
   branch: main
 
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: SEU_CLOUD_NAME
+    api_key: SUA_API_KEY
+
 media_folder: assets/img
 public_folder: assets/img
 
@@ -17,7 +23,7 @@ collections:
             label: Fotos
             widget: list
             fields:
-              - { label: "Foto", name: "arquivo", widget: "image", media_folder: "/assets/img/Editorial-makeup", public_folder: "/assets/img/Editorial-makeup" }
+              - { label: "Foto", name: "arquivo", widget: "image", media_library: { config: { folder: "Editorial-makeup" } } }
               - { label: "Legenda", name: "legenda", widget: "string", required: false }
               - { label: "Layout", name: "tipo", widget: "select", options: ["multi", "single"], default: "multi" }
 
@@ -29,7 +35,7 @@ collections:
             label: Fotos
             widget: list
             fields:
-              - { label: "Foto", name: "arquivo", widget: "image", media_folder: "/assets/img/Editorial-fashion", public_folder: "/assets/img/Editorial-fashion" }
+              - { label: "Foto", name: "arquivo", widget: "image", media_library: { config: { folder: "Editorial-fashion" } } }
               - { label: "Legenda", name: "legenda", widget: "string", required: false }
               - { label: "Layout", name: "tipo", widget: "select", options: ["multi", "single"], default: "multi" }
 
@@ -41,7 +47,7 @@ collections:
             label: Fotos
             widget: list
             fields:
-              - { label: "Foto", name: "arquivo", widget: "image", media_folder: "/assets/img/Beauty-portraits", public_folder: "/assets/img/Beauty-portraits" }
+              - { label: "Foto", name: "arquivo", widget: "image", media_library: { config: { folder: "Beauty-portraits" } } }
               - { label: "Legenda", name: "legenda", widget: "string", required: false }
               - { label: "Layout", name: "tipo", widget: "select", options: ["multi", "single"], default: "multi" }
 
@@ -53,6 +59,6 @@ collections:
             label: Fotos
             widget: list
             fields:
-              - { label: "Foto", name: "arquivo", widget: "image", media_folder: "/assets/img/Advertising", public_folder: "/assets/img/Advertising" }
+              - { label: "Foto", name: "arquivo", widget: "image", media_library: { config: { folder: "Advertising" } } }
               - { label: "Legenda", name: "legenda", widget: "string", required: false }
               - { label: "Layout", name: "tipo", widget: "select", options: ["multi", "single"], default: "multi" }
