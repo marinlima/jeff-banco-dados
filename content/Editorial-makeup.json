@@ -1,11 +1,6 @@
 {
   "fotos": [
     {
-      "tipo": "single",
-      "arquivo": "/assets/img/Editorial-makeup/gb9pb3twuaam2ri-1-.jpeg",
-      "legenda": "oiiiii"
-    },
-    {
       "arquivo": "Editorial-makeup-1.webp",
       "legenda": "",
       "tipo": "multi"
