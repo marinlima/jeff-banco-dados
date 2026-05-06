@@ -55,3 +55,12 @@ document.querySelectorAll('a[href]').forEach(link => {
     }, 300);
   });
 });
+ document.querySelectorAll('.tel-copy').forEach(btn => {
+  btn.addEventListener('click', () => {
+    navigator.clipboard.writeText(btn.dataset.tel).then(() => {
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = original, 1500);
+    });
+  });
+});
