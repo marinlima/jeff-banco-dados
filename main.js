@@ -45,4 +45,4 @@ document.querySelectorAll('a[href]').forEach(link => {
       window.location.href = url;
     }, 300);
   });
-});
+}); 

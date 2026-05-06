@@ -4,32 +4,29 @@ const navLeft = document.getElementById('navLeft');
 
 let timeout;
 
-navLeft.addEventListener('mouseenter', () => {
+hbg.addEventListener('mouseenter', () => {
   clearTimeout(timeout);
   drop.classList.add('open');
 });
 
-navLeft.addEventListener('mouseleave', () => {
+drop.addEventListener('mouseenter', () => {
+  clearTimeout(timeout);
+});
+
+hbg.addEventListener('mouseleave', () => {
   timeout = setTimeout(() => {
     drop.classList.remove('open');
-  }, 200);
+  }, 400);
 });
 
-hbg.addEventListener('click', (e) => {
-  e.stopPropagation();
-  drop.classList.toggle('open');
-});
-
-document.addEventListener('click', (e) => {
-  if (!navLeft.contains(e.target)) {
+drop.addEventListener('mouseleave', () => {
+  timeout = setTimeout(() => {
     drop.classList.remove('open');
-  }
+  }, 400);
 });
 
-document.addEventListener('touchstart', (e) => {
-  if (!navLeft.contains(e.target)) {
-    drop.classList.remove('open');
-  }
+drop.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => drop.classList.remove('open'));
 });
 
 window.addEventListener('load', () => {
@@ -43,28 +40,18 @@ window.addEventListener('load', () => {
   }
 });
 
-document.querySelectorAll('a').forEach(link => {
-  const href = link.getAttribute('href');
+document.querySelectorAll('a[href]').forEach(link => {
+  link.addEventListener('click', e => {
+    const url = link.getAttribute('href');
 
-  if (
-    href &&
-    !href.startsWith('#') &&
-    !href.startsWith('http') &&
-    !href.includes('#')
-  ) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
+    if (!url || url.startsWith('#') || link.target === '_blank') return;
 
-      document.body.classList.remove('page-loaded');
-      document.body.classList.add('fade-out');
+    e.preventDefault();
 
-      setTimeout(() => {
-        window.location.href = href;
-      }, 250);
-    });
-  }
-});
+    document.body.classList.add('fade-out');
 
-drop.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => drop.classList.remove('open'));
+    setTimeout(() => {
+      window.location.href = url;
+    }, 300);
+  });
 });

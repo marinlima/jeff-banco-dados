@@ -216,9 +216,20 @@ nav {
 
 .socials {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.socials-contact {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.socials-icons {
+  display: flex;
+  gap: 24px;
   align-items: center;
 }
 
@@ -275,8 +286,13 @@ nav {
   .bio-col {
     padding-left: 0;
   }
-  
+
   .socials {
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.socials-contact {
   flex-direction: column;
   align-items: center;
   gap: 16px;
@@ -317,4 +333,9 @@ body.fade-out {
 
 .soc-text:hover {
   opacity: 0.45;
+}
+.socials-contact {
+  display: flex;
+  gap: 32px;
+  align-items: center;
 }
