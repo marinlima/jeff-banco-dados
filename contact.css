@@ -216,8 +216,10 @@ nav {
 
 .socials {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  align-items: center;
 }
 
 .soc svg {
@@ -273,7 +275,19 @@ nav {
   .bio-col {
     padding-left: 0;
   }
+  
+  .socials {
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
 
+.socials-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
   .s2-name {
     font-size: 32px;
   }
@@ -290,4 +304,17 @@ body.page-loaded {
 
 body.fade-out {
   opacity: 0;
+}
+
+.soc-text {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #f2f2f2;
+  text-decoration: none;
+  padding: 4px 0;
+}
+
+.soc-text:hover {
+  opacity: 0.45;
 }

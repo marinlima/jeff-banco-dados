@@ -27,15 +27,6 @@ dropdown.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => dropdown.classList.remove('open'));
 });
 
-
-const portfolioTitle = document.querySelector('.portfolio-title');
-const portfolioContent = document.getElementById('portfolioContent');
-
-portfolioTitle.addEventListener('click', () => {
-  portfolioTitle.classList.toggle('collapsed');
-  portfolioContent.classList.toggle('collapsed');
-});
-
 window.addEventListener('load', () => {
   document.body.classList.add('page-loaded');
 });

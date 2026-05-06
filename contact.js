@@ -26,6 +26,12 @@ document.addEventListener('click', (e) => {
   }
 });
 
+document.addEventListener('touchstart', (e) => {
+  if (!navLeft.contains(e.target)) {
+    drop.classList.remove('open');
+  }
+});
+
 window.addEventListener('load', () => {
   document.body.classList.add('page-loaded');
 
@@ -44,7 +50,7 @@ document.querySelectorAll('a').forEach(link => {
     href &&
     !href.startsWith('#') &&
     !href.startsWith('http') &&
-    !href.includes('#') //
+    !href.includes('#')
   ) {
     link.addEventListener('click', function (e) {
       e.preventDefault();
@@ -59,3 +65,6 @@ document.querySelectorAll('a').forEach(link => {
   }
 });
 
+drop.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => drop.classList.remove('open'));
+});
