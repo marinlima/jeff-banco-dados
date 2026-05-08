@@ -1,12 +1,12 @@
-'backend:
+backend:
   name: git-gateway
   branch: main
 
 media_library:
   name: cloudinary
   config:
-    cloud_name: dhfjtop8x
-    api_key: 177524276612323
+    cloud_name: dgac7ammz
+    api_key: 321396965257345
 
 media_folder: assets/img
 public_folder: assets/img
