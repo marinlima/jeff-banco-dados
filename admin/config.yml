@@ -61,4 +61,4 @@ collections:
             fields:
               - { label: "Foto", name: "arquivo", widget: "image", media_library: { config: { folder: "Advertising" } } }
               - { label: "Legenda", name: "legenda", widget: "string", required: false }
-              - { label: "Layout", name: "tipo", widget: "select", options: ["multi", "single"], default: "multi" }'
+              - { label: "Layout", name: "tipo", widget: "select", options: ["multi", "single"], default: "multi" }
