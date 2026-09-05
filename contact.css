@@ -153,6 +153,12 @@ nav {
   color: #f2f2f2;
 }
 
+#bioParagraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .bio-text {
   font-size: 13.5px;
   font-weight: 300;
