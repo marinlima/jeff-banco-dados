@@ -12,6 +12,21 @@ media_folder: assets/img
 public_folder: assets/img
 
 collections:
+  - name: "textos"
+    label: "Textos do Site"
+    files:
+      - name: "geral"
+        label: "Textos Gerais"
+        file: "content/site-texts.json"
+        fields:
+          - { label: "Nome (menu, hero e contato)", name: "siteName", widget: "string" }
+          - { label: "Frase/Tagline", name: "tagline", widget: "string" }
+          - { label: "Texto do botão 'Sobre'", name: "aboutButtonLabel", widget: "string" }
+          - { label: "Título da Biografia", name: "biographyTitle", widget: "string" }
+          - { label: "Parágrafos da Biografia", name: "biographyParagraphs", widget: "list" }
+          - { label: "Telefone", name: "phone", widget: "string" }
+          - { label: "E-mail", name: "email", widget: "string" }
+
   - name: "legendas"
     label: "Legendas das Fotos"
     files:
